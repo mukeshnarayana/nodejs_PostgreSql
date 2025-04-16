@@ -1,0 +1,16 @@
+const express = require('express')
+const UserRouter = express.Router()
+const userController = require('../Controlles/Users')
+const middle = require('../middlewares/Middleware')
+
+UserRouter.post('/signup',userController.signup)
+UserRouter.post('/verifyaccount',userController.verifyaccount)
+UserRouter.post('/reverifylink',userController.reverifylink)
+UserRouter.post('/login',userController.userlogin)
+UserRouter.post('/userdata',middle.checktoken,userController.userdata)
+UserRouter.post('/forgetpassword',userController.forgetpassword)
+UserRouter.post('/resetpassword',userController.resetpassword)
+UserRouter.post('/changepassword',userController.changepassword)
+UserRouter.post('/profilepic',userController.uploadphoto)
+UserRouter.post('/logout',userController.logout)
+module.exports = UserRouter
