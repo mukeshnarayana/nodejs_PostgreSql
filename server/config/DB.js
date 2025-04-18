@@ -11,7 +11,6 @@ const sequelize = new Sequelize(
         port: process.env.DB_Port,
         logging: false
     }
-    
 );
 
 
